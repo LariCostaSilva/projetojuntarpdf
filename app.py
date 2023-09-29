@@ -31,10 +31,10 @@ for arquivo_na_pasta_origem in arquivos_na_pasta_origem:
         # Abre o arquivo PDF 
         pdf_origem = PdfReader(caminho_arquivo_origem)
         
-        # Abra o arquivo PDF da pasta de junção
+        # Abre o arquivo PDF da pasta de junção
         pdf_juntar = PdfReader(os.path.join(PASTA_JUNTAR, 'arquivo_para_juntar.pdf'))
         
-        # CCria um novo arquivo na pasta resultado
+        # Cria um novo arquivo na pasta resultado
         pdf_resultante = PdfWriter()
         
         # Adiciona todas as páginas do arquivo da pasta de origem ao arquivo resultante
@@ -45,6 +45,6 @@ for arquivo_na_pasta_origem in arquivos_na_pasta_origem:
         for pagina in pdf_juntar.pages:
             pdf_resultante.add_page(pagina)  # Usa o add_page em vez de addPage para isso
         
-        # SAlva o arquivo final (mergeado) PDF resultante na pasta de destino
+        # Salva o arquivo final (mergeado) PDF resultante na pasta de destino
         with open(caminho_arquivo_destino, 'wb') as arquivo_resultante:
             pdf_resultante.write(arquivo_resultante)
